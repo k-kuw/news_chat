@@ -10,7 +10,9 @@
     <%= javascript_importmap_tags %>
   </head>
 
-  <body>
+  <body class="blue lighten-4">
+    <%= render 'layouts/navigation' %>
     <%= yield %>
+    <%= render 'layouts/footer' %>
   </body>
 </html>

@@ -1,0 +1,23 @@
+
+<i class="tiny material-icons">chevron_left</i><span><%= link_to "戻る", :back, class: "link-title" %></span>
+
+<div class="row">
+  <div class="col s6 push-1">
+    <div class="card-panel">
+      <h5><%= @article.title %></h5>
+      <p><%= @article.description %></p>
+    </div>
+  </div>
+  <div class="col s6 push-1">
+    <div class="card-panel grey lighten-2">
+      <h5 class="card-panel grey lighten-2 center white-text" id="chat-space">Chat space</h5>
+       <p>chat</p>
+      <div>
+        <input type="text">
+        <%= link_to login_path, class: "waves-effect waves-light btn-small" do %>
+          <i class="material-icons">chat</i>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>

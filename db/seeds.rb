@@ -1,7 +1,5 @@
-# This file should contain all the record creation needed to seed the database with its default values.
-# The data can then be loaded with the bin/rails db:seed command (or created alongside the database with db:setup).
-#
-# Examples:
-#
-#   movies = Movie.create([{ name: "Star Wars" }, { name: "Lord of the Rings" }])
-#   Character.create(name: "Luke", movie: movies.first)
+# Category.create([{ name: "音楽" }, { name: "芸能" }, { name: "政治" }, { name: "国際" }, { name: "スポーツ" }])
+
+# Article.create(title: "トランプ前大統領 NY州大陪審が起訴 米複数のメディア伝える",
+#                description: "アメリカの複数のメディアは、ニューヨーク州の大陪審が30日、トランプ前大統領を起訴したと伝えました。罪状については明らかになっていませんが、アメリカメディアによりますと、大統領経験者が起訴されるのは史上初めてだということです。", category_id: 4)
+Article.create([{ title: "福原遥ＮＨＫ朝ドラ「舞いあがれ！」最終回に「ご覧くださる方と一緒に歩んだ半年間」と感謝", description: "ＮＨＫ朝の連続テレビ小説「舞いあがれ！」が３１日に最終回を迎え、ヒロインを演じた福原遥が同局を通じてコメントを寄せた。", category_id: 2 }, { title: "開幕投手・大谷翔平の「渋い顔つき」　決戦前の“堂々歩き”は「一段とかっこいい」", description: "エンゼルスの大谷翔平投手は30日（日本時間31日、試合開始11時7分）、敵地で行われるアスレチックスとの開幕戦で2年連続の開幕投手を務める。大役に向けてチームとともに全身黒コーデで球場入り。大役を見据えた真剣な眼差しを球団公式ツイッターが公開すると「渋い顔つきの大谷君」「世界一になって風格増した」とファンも大注目だ。", category_id: 5 }, { title: "小西洋之議員が「サル発言」謝罪、報道には不満…立民側は「党の考えではない」", description: "立憲民主党の小西洋之参院議員が、憲法審査会の毎週開催は「サルがやること」などと述べたことに対し、与野党は３０日、一斉に批判した。国会審議のあり方を根底から否定しかねない発言で、所属する立民の責任を問う声も上がっている。", category_id: 3 }, { title: "政府 半導体製造装置の輸出管理厳格化 中国などへ手続き厳しく", description: "政府は、国際的な安全保障をめぐる環境が厳しくなる中、先端半導体の製造装置23品目の輸出管理を厳しくする措置を新たに行うと発表しました。", category_id: 3 }, { title: "Mrs. GREEN APPLE、5枚目のオリジナルフルアルバム『ANTENNA』を7/5リリース", description: "2023.03.30 18:00 Mrs. GREEN APPLEが、『Attitude』以来4年ぶり5枚目のオリジナルフルアルバム『ANTENNA』を7月5日（水）にリリースすることが決定した。", category_id: 1 }])
