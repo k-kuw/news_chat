@@ -1,0 +1,27 @@
+<header>
+  <div class="nav-button">
+    <%= link_to login_path, class: "waves-effect waves-light btn-small" do %>
+      <i class="material-icons left">person_outline</i>ログイン
+    <% end %>
+  </div>
+  <nav>
+    <div class="nav-wrapper" id="nav-first">
+      <%= link_to "Dialogue", root_path, class: "brand-logo center", id:"nav-title" %>    
+    </div>
+    
+    <div class="nav-wrapper">
+      <ul id="nav-mobile" class="row margin-0">
+        <% @categories.each do |category| %>
+          <li class="col s2 push-s1 center-align">
+            <%= link_to category, class:"circle topic-icon" do %>
+              <%= image_tag "/#{category.name}.png", size: "60", class: "white circle ", alt: category.name %>
+            <% end %>
+            <div class="topic-title <%= " sports" if category.name == "スポーツ" %>"><%= link_to category.name, category, class: "white-text z-depth-0" %></div>
+          </li>
+        <% end %>
+      </ul>
+    </div>
+  </nav>
+</header>
+
+<hr id="nav-hr">

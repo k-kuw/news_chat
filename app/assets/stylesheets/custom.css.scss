@@ -1,0 +1,100 @@
+@import "materialize";
+
+nav {
+  background-color: #bbdefb;
+  box-shadow: none;
+}
+
+#nav-title {
+  font-family: "Comic Sans MS";
+  font-size: 50px;
+  margin-top: 15px;
+}
+
+#chat-space {
+  font-family: "Comic Sans MS";
+  text-shadow: 2px 2px 4px black;
+}
+
+.margin-0 {
+  margin: 0;
+}
+
+#nav-first {
+  margin-bottom: 25px;
+}
+
+
+.topic-icon {
+  display: inline-block;
+  padding: 0;
+  width: 60px;
+  height: 60px;
+  vertical-align: bottom;
+}
+
+.topic-title {
+  align-items: center;
+}
+
+.topic-title a {
+  white-space: nowrap;
+  font-size: 20px;
+  font-weight: bolder;
+  text-shadow: 1px 1px 2px black;
+  display: inline-block;
+  vertical-align: top;
+  height: 40px;
+  width: 50px;
+  padding: 0;
+}
+
+.topic-title :hover {
+  text-shadow: none;
+  color: #1565c0;
+  background-color: #bbdefb;
+}
+
+.sports {
+  padding-right: 20px;
+}
+
+#nav-hr {
+  margin-top: 10rem;
+  border-top: 2px dashed #1565c0;
+  background-color: #bbdefb;
+  padding: 0;
+}
+
+#footer-hr {
+  margin-top: 2rem;
+  border-top: 2px dashed #1565c0;
+  background-color: #bbdefb;
+  padding: 0;
+}
+
+.nav-button {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+}
+
+
+form {
+  margin-top: 20px;
+  margin-bottom: 20px;
+  border-radius: 20px;
+}
+
+.link-title {
+  color: black;
+  text-decoration: underline;
+}
+
+.form-button {
+  margin-bottom: 20px;
+}
+
+.top-input {
+  margin-top: 40px;
+}

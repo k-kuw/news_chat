@@ -1,0 +1,11 @@
+<p style="color: green"><%= notice %></p>
+
+<div id="articles">
+  <% @articles.each do |article| %>
+    <%= render article %>
+  <% end %>
+</div>
+
+<div class="center">
+  <%= paginate @articles %>
+</div>
