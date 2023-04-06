@@ -1,8 +1,16 @@
 <header>
   <div class="nav-button">
-    <%= link_to login_path, class: "waves-effect waves-light btn-small" do %>
-      <i class="material-icons left">person_outline</i>ログイン
+    <% if @current_user %>
+      <p>ログイン中：<strong><%= @current_user.username %></strong></p>
+      <%= link_to logout_path, class: "waves-effect waves-light btn-small", data: {turbo_method: :delete} do %>
+        ログアウト
+      <% end %>
+    <% else %>
+      <%= link_to login_path, class: "waves-effect waves-light btn-small" do %>
+        <i class="material-icons left">person</i>ログイン
+      <% end %>
     <% end %>
+    <br>
   </div>
   <nav>
     <div class="nav-wrapper" id="nav-first">
@@ -16,7 +24,7 @@
             <%= link_to category, class:"circle topic-icon" do %>
               <%= image_tag "/#{category.name}.png", size: "60", class: "white circle ", alt: category.name %>
             <% end %>
-            <div class="topic-title <%= " sports" if category.name == "スポーツ" %>"><%= link_to category.name, category, class: "white-text z-depth-0" %></div>
+            <div class="topic-title <%= " sports" if category.name == "スポーツ" %>"><%= link_to category.name, category %></div>
           </li>
         <% end %>
       </ul>

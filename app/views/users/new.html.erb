@@ -1,11 +1,17 @@
-<h4 class="center">ログイン</h4>
+<h4 class="center">ユーザー登録</h4>
 
 <div class="row">
-  <%= form_with(scope: :session, url: login_path, class: "col s8 push-s2 m6 push-m3 grey lighten-4") do |f| %>
+  <%= form_with(model: @user, class: "col s8 push-s2 m6 push-m3 grey lighten-4") do |f| %>
     <div class="row">
       <div class="input-field col s10 push-s1 top-input">
+        <%= f.text_field :username, class: "validate" %>
+        <%= f.label :username, "Username(3~25文字)" %>
+      </div>
+    </div>
+    <div class="row">
+      <div class="input-field col s10 push-s1">
         <%= f.email_field :email, class: "validate" %>
-        <%= f.label :email %>
+        <%= f.label :email, "Email(~100文字)" %>
       </div>
     </div>
     <div class="row">
@@ -16,12 +22,7 @@
     </div>
     <div class="center form-button">
       <%= button_tag type: "submit", class: "btn waves-effect waves-light" do %>
-        ログイン<i class="material-icons left">person</i>
-      <% end %>
-    </div>
-    <div class="center form-button">
-      <%= link_to users_path, class: "btn waves-effect waves-light blue" do %>
-        ユーザー登録画面へ<i class="material-icons left">person_add</i>
+        登録<i class="material-icons left">person</i>
       <% end %>
     </div>
   <% end %>

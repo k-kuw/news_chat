@@ -1,0 +1,29 @@
+<h4 class="center">ニュース追加</h4>
+
+<div class="row">
+  <%= form_with(model: @article, class: "col s8 push-s2 m6 push-m3 grey lighten-4") do |f| %>
+    <div class="row">
+      <div class="input-field col s10 push-s1 top-input">
+        <%= f.text_field :title, class: "validate" %>
+        <%= f.label :title,"Title(6~100字)" %>
+      </div>
+    </div>
+    <div class="row">
+      <div class="input-field col s10 push-s1">
+        <%= f.text_area :description, maxlength: 300, class: "validate" %>
+        <%= f.label :description, "Description(20~300字)" %>
+      </div>
+    </div>
+    <div class="row">
+      <div class="input-field col s10 push-s1">
+      <option value="" disabled selected>Choose your category</option>
+        <%= f.collection_select :category_id, Category.all, :id, :name %>
+      </div>
+    </div>
+    <div class="center form-button">
+      <%= button_tag type: "submit", class: "btn waves-effect waves-light" do %>
+        追加<i class="material-icons left">add</i>
+      <% end %>
+    </div>
+  <% end %>
+</div>
