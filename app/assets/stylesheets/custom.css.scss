@@ -11,6 +11,13 @@ nav {
   margin-top: 15px;
 }
 
+#nav-title:hover {
+  font-family: "Comic Sans MS";
+  font-size: 50px;
+  margin-top: 15px;
+  text-shadow: 2px 2px 4px black;
+}
+
 #chat-space {
   font-family: "Comic Sans MS";
   text-shadow: 2px 2px 4px black;
@@ -49,7 +56,7 @@ nav {
   padding: 0;
 }
 
-.topic-title :hover {
+.topic-title a:hover {
   text-shadow: none;
   color: #1565c0;
   background-color: #bbdefb;
@@ -75,8 +82,8 @@ nav {
 
 .nav-button {
   position: absolute;
-  top: 20px;
-  right: 20px;
+  top: 3px;
+  right: 10px;
 }
 
 
@@ -92,9 +99,18 @@ form {
 }
 
 .form-button {
-  margin-bottom: 20px;
+  margin-bottom: 30px;
 }
+
 
 .top-input {
   margin-top: 40px;
+}
+
+.username {
+  margin: 0;
+}
+
+#delete_button {
+  margin-left: 20px;
 }

@@ -1,0 +1,14 @@
+<div class="center row">
+  <% flash.each do |name, msg| %>
+    <div class="col s10 push-s1" id="flash_message">
+      <div class="card-panel <%= name == "success" ? "teal lighten-4" : "red lighten-4" %>">
+        <%= msg %>
+        <% if name == "success" %>
+          <button class="btn-small white" id="delete_button">
+            <i class="black-text material-icons">close</i>
+          </button>
+        <% end %>
+      </div>
+    </div>
+  <% end %>
+</div>
