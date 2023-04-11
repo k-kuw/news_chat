@@ -5,17 +5,17 @@ class SessionsController < ApplicationController
     user = User.find_by(email: params[:session][:email].downcase)
     if user && user.authenticate(params[:session][:password])
       session[:user_id] = user.id
-      flash[:success] = 'Logged in successfully'
+      flash[:success] = 'ログインに成功しました'
       redirect_to root_path
     else
-      flash.now[:fail] = 'There was something wrong with your login details'
+      flash.now[:fail] = 'メースアドレスかパスワードに誤りがあります。もう一度お試しください'
       render 'new', status: :unprocessable_entity
     end
   end
 
   def destroy
     session[:user_id] = nil
-    flash[:success] = "Logged out"
+    flash[:success] = "ログアウトしました"
     redirect_to root_path
   end
 end

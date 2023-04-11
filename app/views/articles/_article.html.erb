@@ -2,6 +2,7 @@
     <li class="col s10 push-s1">
       <div class="card-panel">
         <h5><%= link_to article.title, article, class: "link-title" %></h5>
+        <div class="right-align"><small><%= l article.created_at, format: :short %></small></div>
         <p><%= article.description %></p>
       </div>
     </li>

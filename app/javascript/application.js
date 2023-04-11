@@ -4,13 +4,21 @@ import "controllers";
 import "jquery";
 import "materialize";
 
+const scroll_bottom = function () {
+  if ($("#message_list").length > 0) {
+    $("#message_list").scrollTop($("#message_list")[0].scrollHeight);
+  }
+};
+
 $(document).on("turbo:load", function () {
   $("#delete_button").on("click", function () {
-    const flash_message = document.getElementById("flash_message");
-    flash_message.remove();
+    $("#flash_message").remove();
+  });
+  scroll_bottom();
+  $(function () {
+    $("select").formSelect();
   });
 });
 
-$(function () {
-  $("select").formSelect();
-});
+
+import "channels";

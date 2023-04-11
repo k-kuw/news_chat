@@ -80,10 +80,16 @@ nav {
   padding: 0;
 }
 
-.nav-button {
+#nav-button {
   position: absolute;
   top: 3px;
   right: 10px;
+}
+
+#nav-admin-button {
+  position: absolute;
+  top: 3px;
+  left: 10px;
 }
 
 
@@ -112,5 +118,46 @@ form {
 }
 
 #delete_button {
-  margin-left: 20px;
+  margin: 20px;
+}
+
+#message_content {
+  margin: 0;
+}
+
+.card-panel {
+  padding: 0;
+}
+
+#message_row {
+  margin: 0;
+}
+
+#message_col {
+  padding: 0;
+}
+
+#message_list {
+  height: 40vh;
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+
+#message_button {
+  margin: 10px;
+}
+
+#chat-space {
+  margin: 0;
+  padding-bottom: 10px;
+}
+
+#message_card {
+  word-wrap: break-word;
+}
+
+#caret {
+  display: inline-block;
+  margin: none;
+  padding: 100px;
 }

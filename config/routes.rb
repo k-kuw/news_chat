@@ -7,4 +7,6 @@ Rails.application.routes.draw do
   get "/categories/:id", to: 'articles#index', as: "category"
   get "users", to: "users#new"
   post "users", to: "users#create"
+  post "message/:article_id", to: "messages#create"
+  mount ActionCable.server, at: '/cable'
 end
