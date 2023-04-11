@@ -1,0 +1,21 @@
+<li class="row" id="message_row">
+  <% if @current_user == message.user %>
+    <div class="col s4 push-s7" id="message_col">
+      <div class="right-align">
+        <small><%= l message.created_at, format: :message %></small>
+        <small id="name">me</small>
+      </div>
+      <div class="card-panel teal lighten-4" id="message_card">
+        <p id="message_content"><%= message.content %></p>
+      </div>
+    </div>
+  <% else %>
+    <div class="col s4 push-s1" id="message_col">
+        <small><%= l message.created_at, format: :message %></small>
+        <small id="name"><%= message.user.username %></small>
+      <div class="card-panel white" id="message_card">
+        <p id="message_content"><%= message.content %></p>
+      </div>
+    </div>
+  <% end %>
+</li>

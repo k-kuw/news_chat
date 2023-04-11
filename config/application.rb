@@ -8,6 +8,9 @@ Bundler.require(*Rails.groups)
 
 module NewsChat
   class Application < Rails::Application
+    # create_at, update_atを日本時間に
+    config.i18n.default_locale = :ja
+    config.time_zone = 'Tokyo'
     # Initialize configuration defaults for originally generated Rails version.
     config.load_defaults 7.0
 

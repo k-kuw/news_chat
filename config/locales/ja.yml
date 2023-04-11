@@ -1,0 +1,6 @@
+ja:
+  time:
+    formats:
+      default: "%Y年%m月%d日 %H:%M"
+      short: "%Y年%m月%d日"
+      message: "%Y/%m/%d %H:%M"
