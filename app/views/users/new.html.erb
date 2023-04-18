@@ -4,18 +4,21 @@
   <%= form_with(model: @user, class: "col s8 push-s2 m6 push-m3 grey lighten-4") do |f| %>
     <div class="row">
       <div class="input-field col s10 push-s1 top-input">
+        <%# ユーザーの名前 %>
         <%= f.text_field :username, class: "validate" %>
         <%= f.label :username, "Username(3~25文字)" %>
       </div>
     </div>
     <div class="row">
       <div class="input-field col s10 push-s1">
+        <%# ユーザーのemail %>
         <%= f.email_field :email, class: "validate" %>
         <%= f.label :email, "Email(~100文字)" %>
       </div>
     </div>
     <div class="row">
       <div class="input-field col s10 push-s1">
+        <%# ユーザーのパスワード %>
         <%= f.password_field :password, class: "validate" %>
         <%= f.label :password %>
       </div>

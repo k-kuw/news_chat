@@ -1,36 +1,55 @@
 <i class="tiny material-icons">chevron_left</i><span><%= link_to "戻る", :back, class: "link-title" %></span>
 
 <div class="row">
+  <%# 記事 %>
   <div class="col s6 push-1">
     <div class="card-panel">
-      <div class="right-align"><small>投稿日: <%= l @article.created_at, format: :short %></small></div>
-      <div class="right-align"><small>更新日: <%= l @article.updated_at, format: :short %></small></div>
+      <div class="row">
+        <div class="right col s4">
+          <%# 日時表示 %>
+          <div class="right-align"><small>投稿日: <%= l @article.created_at, format: :short %></small></div>
+          <div class="right-align"><small>更新日: <%= l @article.updated_at, format: :short %></small></div>
+        </div>
+        <div class="col s8 push-s1">
+        <%# 記事に写真ありの場合その写真を表示、ない場合はデフォルト写真を表示 %>
+        <% if @article.photo.attached? %>
+          <%= image_tag @article.photo, size: "250x250" %>
+        <% else %>
+          <%= image_tag 'alt_news.png', size: '250x250' %>
+        <% end %>
+        </div>
+      </div>
       <h5><%= @article.title %></h5>
       <p><%= @article.description %></p>
     </div>
     <div>
+      <%# ログイン状態かつ管理者ユーザーの場合は編集ボタンと削除ボタンを表示 %>
       <% if @current_user && @current_user.admin %>
         <%= link_to edit_article_path(@article), class: "waves-effect waves-light btn-small" do %>
           <i class="material-icons left">update</i>編集
         <% end %>
       <% end %>
       <% if @current_user && @current_user.admin %>
+      <%# 削除の確認をアラート表示 %>
         <%= link_to article_path(@article), data: { turbo_method: :delete, turbo_confirm: "削除してよろしいでしょうか？" }, class: "waves-effect waves-light btn-small" do %>
           <i class="material-icons left">delete_forever</i>削除
         <% end %>
       <% end %>
     </div>
   </div>
+  <%# チャット %>
   <div class="col s6 push-1">
     <h5 class="card-panel grey lighten-2 center white-text" id="chat-space">Chat space</h5>
     <ul class="card-panel grey lighten-2" id="message_list">
       <%= render @messages %>
     </ul>
+      <%# どの記事のメッセージか分かるよう、urlにarticleのidを追加 %>
       <%= form_with url: "/message/#{@article.id}", scope: :message do |f| %>
         <div class="card-panel col s12 row grey lighten-2">
           <div class="col s9 push-s1">
             <%= f.text_field :content, id: "message_text" %>
           </div>
+          <%# ログインしていない場合は送信ボタンを押せない %>
           <%= button_tag type: "submit", class: "btn waves-effect waves-light col push-s1", id: "message_button", disabled: @current_user ? false: true do %>
             <i class="material-icons">chat</i>
           <% end %>
