@@ -1,4 +1,5 @@
 <li class="row" id="message_row">
+  <%# ログインユーザーとメッセージしたユーザーが同じ場合 %>
   <% if @current_user == message.user %>
     <div class="col s4 push-s7" id="message_col">
       <div class="right-align">
@@ -9,6 +10,7 @@
         <p id="message_content"><%= message.content %></p>
       </div>
     </div>
+  <%# ログインユーザーとメッセージしたユーザーが違う場合 %>
   <% else %>
     <div class="col s4 push-s1" id="message_col">
         <small><%= l message.created_at, format: :message %></small>

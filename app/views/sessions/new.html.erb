@@ -4,12 +4,14 @@
   <%= form_with(scope: :session, url: login_path, class: "col s8 push-s2 m6 push-m3 grey lighten-4") do |f| %>
     <div class="row">
       <div class="input-field col s10 push-s1 top-input">
+        <%# ユーザーのemail %>
         <%= f.email_field :email, class: "validate" %>
         <%= f.label :email %>
       </div>
     </div>
     <div class="row">
       <div class="input-field col s10 push-s1">
+        <%# ユーザーのパスワード %>
         <%= f.password_field :password, class: "validate" %>
         <%= f.label :password %>
       </div>

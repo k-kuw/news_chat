@@ -1,5 +1,6 @@
 <header>
   <div id="nav-admin-button">
+    <%# ログイン状態かつ管理者の場合 %>
     <% if @current_user && @current_user.admin %>
       <%= link_to new_article_path, data: {"turbolinks"=>false},class: "waves-effect waves-light btn-small" do %>
         <i class="material-icons left">person</i>ニュース追加
@@ -7,6 +8,7 @@
     <% end %>
   </div>
   <div id="nav-button">
+    <%# ログイン・ログアウトボタン %>
     <% if @current_user %>
       <p>ログイン中：<strong id="login_user"><%= @current_user.username %></strong></p>
       <%= link_to logout_path, class: "waves-effect waves-light btn-small", data: {turbo_method: :delete} do %>

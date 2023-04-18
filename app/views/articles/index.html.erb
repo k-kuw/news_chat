@@ -1,9 +1,14 @@
+<%# トップ画面 %>
 <div id="articles">
-  <% @articles.each do |article| %>
-    <%= render article %>
+  <% if @articles %>
+    <% @articles.each do |article| %>
+      <%= render article %>
+    <% end %>
   <% end %>
 </div>
 
 <div class="center">
-  <%= paginate @articles %>
+  <% if @articles %>
+    <%= paginate @articles %>
+  <% end %>
 </div>
